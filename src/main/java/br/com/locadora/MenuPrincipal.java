@@ -1,7 +1,6 @@
 package br.com.locadora;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -107,6 +106,7 @@ public class MenuPrincipal extends JFrame {
             }
         });
 
+        labelUsuario.setBounds(10,269,381,17);
         // -->
         meuMenu.add(menuArquivo);
         meuMenu.add(menuMovimenta);
@@ -131,6 +131,9 @@ public class MenuPrincipal extends JFrame {
     }
 
     private void sobreSistema(ActionEvent e) {
+         JanelaSobre janelaSobre = new JanelaSobre("src/main/resources/globo2.jpg");
+         janelaSobre.setLocation((800-380)/2, (600-300)/2);
+         janelaSobre.show();
     }
 
     private void mostrarFilme(ActionEvent e) {
@@ -146,5 +149,13 @@ public class MenuPrincipal extends JFrame {
     }
 
     private void cadastraFilme(ActionEvent e) {
+    }
+
+    public JLabel getLabelUsuario() {
+        return labelUsuario;
+    }
+
+    public void setLabelUsuario(String labelUsuario) {
+        this.labelUsuario.setText(labelUsuario);
     }
 }
